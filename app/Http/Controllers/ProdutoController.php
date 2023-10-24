@@ -6,16 +6,7 @@ use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $nome = 'Andre';
-        return view('site.home', compact('nome'));
-    }
-
-    /**
+      /**
      * Show the form for creating a new resource.
      */
     public function create()
