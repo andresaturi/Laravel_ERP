@@ -11,7 +11,8 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        return "index";
+        $nome = 'Andre';
+        return view('site.home', compact('nome'));
     }
 
     /**
