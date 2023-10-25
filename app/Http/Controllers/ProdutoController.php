@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
+    public function index(){
+        $produtos = Produto::paginate(12);
+
+        return view('produtos.produtos', compact('produtos'));
+    }
       /**
      * Show the form for creating a new resource.
      */
