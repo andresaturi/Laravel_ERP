@@ -5,10 +5,10 @@
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="<?php echo asset('css\style.css')?>" rel="stylesheet">
+
 
   </head>
 
@@ -61,16 +61,22 @@
 
         <ul class="list-unstyled components mb-5">
             <li class="active">
-                <a href="/"><span class="fa fa-home mr-3"></span>
+                <a href="/"><span></span>
                     Página Inicial
-                </a>
+                </a>                
             </li>
+            
             <li>
-                <a href="/produtos">
-                    <span class="fa fa-sticky-note mr-3"></span>
+                <a href="/produtos"><span></span>
                     Produtos
-                </a>
+                </a>                
             </li>
+            <li class="active">
+                <a href="/"><span></span>
+                    Categorias
+                </a>                
+            </li>
+           
             
             <li>
                 <a href="{% url 'listar-manuais' %}"><span class="fa fa-sticky-note mr-3"></span>
@@ -106,12 +112,12 @@
 <footer>
     <p> copyright 2023</p>
 </footer>
-    <script src="<?php echo asset('js/jquery.min.js')?>"></script>
-    <script src="<?php echo asset('js/popper.js')?>"></script>
-    <script src="<?php echo asset('js/bootstrap.min.js')?>"></script>
     <script src="<?php echo asset('js/main.js')?>"></script>
+    <script src="<?php echo asset('js/jquery.min.js')?>"></script>    
+    <script src="<?php echo asset('js/bootstrap.min.js')?>"></script>
+    <script src="<?php echo asset('js/popper.min.js.map')?>"></script>
+    
     <script src="https://kit.fontawesome.com/c0e52ba84a.js" crossorigin="anonymous"></script>
-
 </body>
 
 </html>

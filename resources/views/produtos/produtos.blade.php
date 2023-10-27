@@ -24,7 +24,7 @@
                     <img src="\img\products\{{ $produto->image }}" class="img-fluid"alt="" class="image">
                     <div class="card-body">
                         <h5 class="card-title">{{ Str::limit($produto->nome, 20) }}</h5>
-                        <a href="/produtos/{{ $produto->id }}" class="btn btn-primary btn-sm">Ver</a>
+                        <a href="{{ route('produto.show', $produto->id) }}" class="btn btn-primary btn-sm">Ver</a>
                         <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-secondary btn-sm">Editar</a>
                     </div>
                 </div>
