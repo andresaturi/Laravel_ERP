@@ -17,8 +17,19 @@
         <div class="col-md-12" id="description-container">
             <p>postado por: {{ $produto->user->name }}</p>
             <p>Categoria: {{ $produto->categoria->nome }}</p>
-        </div>   
+        </div>           
     </div>
+    <form action="{{ route('addCarrinho') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <input type="hidden" name="id" value="{{ $produto->id }}">
+        <input type="hidden" name="name" value="{{ $produto->nome }}">
+        <input type="hidden" name="price" value="{{ $produto->preco }}">
+        <input type="number" name="qnt" value="1">
+        <input type="hidden" name="img" value="3">
+        <button class="btn orange btn-large">
+            Comprar
+        </button>
+    </form> 
 </div>
 
 @endsection

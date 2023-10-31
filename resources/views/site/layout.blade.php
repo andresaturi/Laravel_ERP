@@ -23,6 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             @guest
+            <a href="/carrinho">Carrinho</a>
             <a href="/login">login</a>
             <a href="/register">cadastrar</a>
             @endguest
@@ -112,8 +113,8 @@
 <footer>
     <p> copyright 2023</p>
 </footer>
-    <script src="<?php echo asset('js/main.js')?>"></script>
-    <script src="<?php echo asset('js/jquery.min.js')?>"></script>    
+    <script src="<?php echo asset('js/jquery.min.js')?>"></script>  
+    <script src="<?php echo asset('js/main.js')?>"></script>  
     <script src="<?php echo asset('js/bootstrap.min.js')?>"></script>
     <script src="<?php echo asset('js/popper.min.js.map')?>"></script>
     
