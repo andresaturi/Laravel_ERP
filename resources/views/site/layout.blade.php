@@ -22,29 +22,29 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            @guest
-            <a href="/carrinho">Carrinho</a>
-            <a href="/login">login</a>
-            <a href="/register">cadastrar</a>
+            <li class="nav-item">
+                <a href="/carrinho">Carrinho</a>
+            </li>
+            @guest  
+            <li class="nav-item">          
+                <a href="/login">login</a>
+            </li>
+            <li class="nav-item">
+                <a href="/register">cadastrar</a>
+            </li>
             @endguest
             @auth
             <li class="nav-item">
-                <a class="btn" href="/dashboard">
-                    <p> <?php echo auth()->user()->name; ?>
+                <a class="btn" href="{{ route('admin.dashboard') }}">
+                    <p class="text-white">Olá, {{ auth()->user()->name }}
                         <i class="fa-solid fa-user"></i>
                     </p>             
                 </a>
             </li>
             <li class="nav-item">
-                <form action="/logout" method="POST">
-                    @csrf
-                    <a href="/logout"
-                    class="btn btn-danger btn-sm"
-                        onclick="event.preventDefault();
-                        this.closest('form').submit();">
-                        <i class="fa-solid fa-power-off"></i>
-                    </a>
-                </form>
+                <a href="{{ route('login.logout') }}">
+                    <i class="fa-solid fa-power-off"></i>
+                </a>               
             </li>
             @endauth          
         </ul>
