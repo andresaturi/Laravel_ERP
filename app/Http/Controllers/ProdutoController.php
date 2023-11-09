@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ProdutoController extends Controller
 {
@@ -27,6 +28,7 @@ class ProdutoController extends Controller
     public function show(string $id){
 
         $produto = Produto::where('id', $id)->first();
+        Gate::authorize('ver-produto', $produto);
 
         return view('produtos.details', ['produto' => $produto]);
     }

@@ -18,7 +18,8 @@
     </form>
     <div id="events-container" class="col-md-12">   
         <div id="cards-container" class="row">
-            @foreach($produtos as $produto)
+
+            @foreach($produtos as $produto)            
             <div class="col-md-3 mb-4">
                 <div class="card">
                     <img src="\img\products\{{ $produto->image }}" class="img-fluid"alt="" class="image">
@@ -28,7 +29,7 @@
                         <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-secondary btn-sm">Editar</a>
                     </div>
                 </div>
-            </div>
+            </div>            
             @endforeach
 
             {{ $produtos->links('custom.paginacao') }}
