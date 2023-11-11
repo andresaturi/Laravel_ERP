@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -16,7 +17,9 @@ class ProdutoController extends Controller
      
     public function create()
     {
-        //
+        $categorias = Categoria::all();
+
+        return view('produtos.create', compact('categorias'));
     }
 
     

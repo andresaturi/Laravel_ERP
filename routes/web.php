@@ -14,6 +14,7 @@ Route::resource('users', UserController::class);
 
 Route::resource('produtos', ProdutoController::class);
 Route::get('produto/{id}', [ProdutoController::class, 'show'])->name('produto.show');
+Route::get('produto/create', [ProdutoController::class, 'create'])->name('produto.create');
 Route::get('categoria/{id}', [ProdutoController::class, 'categoria'])->name('categoria.show');
 
 Route::get('carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('carrinho');

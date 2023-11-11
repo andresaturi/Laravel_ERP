@@ -43,7 +43,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="{{ asset('images/icon/logo.png') }}" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -157,8 +157,8 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                <a href="{{ route('admin.dashboard') }}">
+                    <img src="{{ asset('images/icon/logo.png') }}" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -270,7 +270,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Digite aqui sua dúvida..." />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
@@ -390,7 +390,7 @@
                                 </div>
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">  
-                                                                              
+                                          @auth                                  
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{ auth()->user()->name }}</a>
                                         </div>
@@ -405,28 +405,32 @@
                                                     <h5 class="name">
                                                         <a href="#">{{ auth()->user()->name }}</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">{{ auth()->user()->email }}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                        <i class="zmdi zmdi-account"></i>Minha Conta</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                        <i class="zmdi zmdi-settings"></i>Configurações</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                        <i class="zmdi zmdi-money-box"></i>Carteira</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="{{ route('login.logout') }}">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
+                                        @endauth
+                                        @guest
+                                          <a href="/login">Login/Cadastrar</a>   
+                                        @endguest
                                     </div>
                                 </div>
                             </div>
@@ -444,7 +448,7 @@
                         
             <div class="col-md-12">
                 <div class="copyright">
-                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>                                
+                    <p>Copyright © 2023 BlueGestor. Todos os direitos Reservados <a href="www.bluegestor.com.br">Ver site</a>.</p>                                
                 </div>
             </div>
             <!-- END MAIN CONTENT-->

@@ -7,9 +7,17 @@
 <div class="main-content">
     <div class="section__content section__content--p30">      
         <div class="container-fluid">
-            <a href="produtos/create" class="btn btn-primary btn-sm align-right">Novo Produto</a>
-            <h5 class="heading-title">Produtos</h5>
+            <div class="overview-wrap">
+                <h2 class="title-1">Meus Produtos</h2>               
+                <a class="au-btn au-btn-icon au-btn--blue" href="{{ route('produtos.create') }}">
+                    <i class="zmdi zmdi-plus"></i>
+                    Criar Produto
+                </a>
+                
+            </div>
+           
             @if(count($produtos) > 0) 
+            <hr>
             <div class="row">
                 @foreach($produtos as $produto)
                 <div class="col-md-4">
@@ -19,9 +27,16 @@
                         <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-secondary btn-sm">Editar</a>
                     </section>
                     </section>
-                </div>                               
+                </div>                                               
                 @endforeach           
             </div>
+            <hr>
+            <div class="row text-center">
+                <div class="col-lg-12 mx-auto">
+                    {{ $produtos->links('custom.paginacao') }}
+                </div>
+            </div>
+            
             @else
             <p>Nenhum Produto encontrado</p>
             @endif
