@@ -33,7 +33,7 @@
             <hr>
             <div class="row text-center">
                 <div class="col-lg-12 mx-auto">
-                    {{ $produtos->links('custom.paginacao') }}
+                    {{ $produtos->links('custom.paginacao', ['produtos' => $produtos]) }}
                 </div>
             </div>
             
