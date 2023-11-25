@@ -275,6 +275,7 @@
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
+                            @auth
                             <div class="header-button">
                                 <div class="noti-wrap">
                                     <div class="noti__item js-item-menu">
@@ -389,16 +390,18 @@
                                     </div>
                                 </div>
                                 <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">  
-                                          @auth                                  
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div >
+                                            <p>{{ auth()->user()->name }}</p>
+                                        </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{ auth()->user()->name }}</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
-                                                <div class="content">
+                                                <div class="image">
                                                     <a href="#">
-                                                        {{ auth()->user()->name }}
+                                                        <img src="{{ asset('images/icon/logo2.png') }}" alt="{{ auth()->user()->name }}" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -411,7 +414,7 @@
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Minha Conta</a>
+                                                        <i class="zmdi zmdi-account"></i>MInha Conta</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
@@ -424,16 +427,16 @@
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="{{ route('login.logout') }}">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                    <i class="zmdi zmdi-power"></i>Sair</a>
                                             </div>
                                         </div>
-                                        @endauth
-                                        @guest
-                                          <a href="/login">Login/Cadastrar</a>   
-                                        @endguest
                                     </div>
                                 </div>
                             </div>
+                            @endauth
+                            @guest
+                            <a href="{{ route('login.form') }}">Login/Cadastrar</a>    
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -458,24 +461,24 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="{{ asset('vendor/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{ asset('vendor/jquery-3.2.1.min.js') }}"></script>
     <!-- Bootstrap JS-->
-    <script src="{{ asset('vendor/bootstrap-4.1/popper.min.js')}}"></script>
-    <script src="{{ asset('vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('vendor/bootstrap-4.1/popper.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
     <!-- Vendor JS       -->
-    <script src="{{ asset('vendor/slick/slick.min.js')}}">
+    <script src="{{ asset('vendor/slick/slick.min.js') }}">
     </script>
-    <script src="{{ asset('vendor/wow/wow.min.js')}}"></script>
-    <script src="{{ asset('vendor/animsition/animsition.min.js')}}"></script>
-    <script src="{{ asset('vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}">
+    <script src="{{ asset('vendor/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('vendor/animsition/animsition.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}">
     </script>
-    <script src="{{ asset('vendor/counter-up/jquery.waypoints.min.js')}}"></script>
-    <script src="{{ asset('vendor/counter-up/jquery.counterup.min.js')}}">
+    <script src="{{ asset('vendor/counter-up/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('vendor/counter-up/jquery.counterup.min.js') }}">
     </script>
-    <script src="{{ asset('vendor/circle-progress/circle-progress.min.js')}}"></script>
-    <script src="{{ asset('vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
-    <script src="{{ asset('vendor/chartjs/Chart.bundle.min.js')}}"></script>
-    <script src="{{ asset('vendor/select2/select2.min.js')}}">
+    <script src="{{ asset('vendor/circle-progress/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('vendor/chartjs/Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/select2/select2.min.js') }}">
     </script>
 
     <!-- Main JS-->

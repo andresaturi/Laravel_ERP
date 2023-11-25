@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/', indexController::class);
 Route::resource('users', UserController::class);
 
-Route::resource('produtos', ProdutoController::class);
+Route::resource('produtos', ProdutoController::class)->middleware('auth');
 Route::get('produto/{id}', [ProdutoController::class, 'show'])->name('produto.show');
 Route::get('produto/create', [ProdutoController::class, 'create'])->name('produto.create');
 Route::get('categoria/{id}', [ProdutoController::class, 'categoria'])->name('categoria.show');
