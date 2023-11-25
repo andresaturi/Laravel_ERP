@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Gate;
 class ProdutoController extends Controller
 {
     public function index(){
-        $produtos = Produto::paginate(12);
-
+        $userId = auth()->user()->id;
+        $produtos = Produto::where('id_user', $userId)->paginate(12);
+        
         return view('produtos.produtos', compact('produtos'));
     }
      
